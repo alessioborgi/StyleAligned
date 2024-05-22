@@ -4,3 +4,4 @@ accelerate
 mediapy
 ipywidgets
 einops
+gradio
