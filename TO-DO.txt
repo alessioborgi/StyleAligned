@@ -2,3 +2,9 @@
 - Try different "beta_schedule" w.r.t. the "scaled_linear" that is the current used, like:  "linear", "squaredcos_cap_v2", "sigmoid".
 - Try different Schedulers w.r.t. DDIMScheduler that is the current used: like PNDMScheduler, LMSDiscreteScheduler, DPM-Solver, EulerAncestralDiscreteScheduler, DPMSolverMultistepScheduler 
 - Try applying Quantization over the Model, at the very start. 
+
+- Make steps, being:
+    - StyleAligned with only prompts.
+    - StyleAligned with prompts and Reference Image from which to get the Style.
+    - StyleAligned with prompts and ControlNet to handle Poses. 
+    - StyleAligned with prompts and ControlNet with Image Derivatives. 
