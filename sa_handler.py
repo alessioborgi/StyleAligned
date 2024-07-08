@@ -35,10 +35,10 @@ class StyleAlignedArgs:
     adain_keys: bool = True
     adain_values: bool = False
     full_attention_share: bool = False
-    shared_score_scale: float = 1.
-    shared_score_shift: float = 0.
+    style_alignment_score_scale: float = 1.
+    style_alignment_score_shift: float = 0.
     only_self_level: float = 0.
-
+    
 
 def expand_first(feat: T, scale=1.,) -> T:
     b = feat.shape[0]
@@ -86,7 +86,7 @@ class SharedAttentionProcessor(DefaultAttentionProcessor):
 
     def shifted_scaled_dot_product_attention(self, attn: attention_processor.Attention, query: T, key: T, value: T) -> T:
         logits = torch.einsum('bhqd,bhkd->bhqk', query, key) * attn.scale
-        logits[:, :, :, query.shape[2]:] += self.shared_score_shift
+        logits[:, :, :, query.shape[2]:] += self.style_alignment_score_shift
         probs = logits.softmax(-1)
         return torch.einsum('bhqk,bhkd->bhqd', probs, value)
 
@@ -134,9 +134,9 @@ class SharedAttentionProcessor(DefaultAttentionProcessor):
         if self.adain_values:
             value = adain(value)
         if self.share_attention:
-            key = concat_first(key, -2, scale=self.shared_score_scale)
+            key = concat_first(key, -2, scale=self.style_alignment_score_scale)
             value = concat_first(value, -2)
-            if self.shared_score_shift != 0:
+            if self.style_alignment_score_shift != 0:
                 hidden_states = self.shifted_scaled_dot_product_attention(attn, query, key, value,)
             else:
                 hidden_states = nnf.scaled_dot_product_attention(
@@ -184,8 +184,8 @@ class SharedAttentionProcessor(DefaultAttentionProcessor):
         self.adain_keys = style_aligned_args.adain_keys
         self.adain_values = style_aligned_args.adain_values
         self.full_attention_share = style_aligned_args.full_attention_share
-        self.shared_score_scale = style_aligned_args.shared_score_scale
-        self.shared_score_shift = style_aligned_args.shared_score_shift
+        self.style_alignment_score_scale = style_aligned_args.style_alignment_score_scale
+        self.style_alignment_score_shift = style_aligned_args.style_alignment_score_shift
 
 
 def _get_switch_vec(total_num_layers, level):
