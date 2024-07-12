@@ -8,3 +8,8 @@
     - StyleAligned with prompts and Reference Image from which to get the Style.
     - StyleAligned with prompts and ControlNet to handle Poses. 
     - StyleAligned with prompts and ControlNet with Image Derivatives. 
+
+- Metrics to use:
+    - Style Consistency (DINO Embedding Similarity): Measure the pairwise average cosine similarity between DINO VIT-B/8 embeddings of the generated images in each set. This helps evaluate how consistent the style is across different images in the set.
+    - CLIP Score: Use the CLIP cosine similarity score to measure how well the generated image aligns with the text description. This helps in assessing the textual alignment and how well the image represents the intended style described in text prompts.
+    - Inception Score (IS): This score measures the quality and diversity of generated images. It uses a pre-trained Inception network to evaluate how distinguishable and diverse the generated images are.
