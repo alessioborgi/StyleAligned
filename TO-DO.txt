@@ -3,6 +3,9 @@
 - Try different Schedulers w.r.t. DDIMScheduler that is the current used: like PNDMScheduler, LMSDiscreteScheduler, DPM-Solver, EulerAncestralDiscreteScheduler, DPMSolverMultistepScheduler 
 - Try applying Quantization over the Model, at the very start. 
 
+- _get_text_embeddings: See what are the two tokenizers and encoders that have been used. 
+https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_xl
+
 - Make steps, being:
     - StyleAligned with only prompts.
     - StyleAligned with prompts and Reference Image from which to get the Style.
