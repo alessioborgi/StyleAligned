@@ -10,7 +10,6 @@ https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diff
     - StyleAligned with only prompts.
     - StyleAligned with prompts and Reference Image from which to get the Style.
     - StyleAligned with prompts and ControlNet to handle Poses. 
-    - StyleAligned with prompts and ControlNet with Image Derivatives. 
 
 - Metrics to use:
     - Style Consistency (DINO Embedding Similarity): Measure the pairwise average cosine similarity between DINO VIT-B/8 embeddings of the generated images in each set. This helps evaluate how consistent the style is across different images in the set.
