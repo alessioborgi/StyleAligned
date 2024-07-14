@@ -342,5 +342,3 @@ def controlnet_call(
     # Offload all models
     pipeline.maybe_free_model_hooks()
     return image
-
-
