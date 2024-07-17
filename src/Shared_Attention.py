@@ -14,8 +14,8 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as nnf
 from diffusers.models import attention_processor
-import AdaIN
-import StyleAlignedArgs
+from . import AdaIN
+from . import StyleAlignedArgs
 from diffusers import StableDiffusionXLPipeline
 
 
