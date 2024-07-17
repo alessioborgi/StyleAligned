@@ -2,8 +2,8 @@ from __future__ import annotations
 import torch
 
 from diffusers import StableDiffusionXLPipeline
-import StyleAlignedArgs
-import Shared_Attention
+from . import StyleAlignedArgs
+from . import Shared_Attention
 
 T = torch.tensor # Create Alias for torch.tensor to increase readability.
 TN = T
