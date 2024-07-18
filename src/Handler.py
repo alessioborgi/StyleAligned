@@ -1,6 +1,16 @@
-from __future__ import annotations
-import torch
+"""
+Handler.py
 
+This file contains the implementation of the Handler Class for registering, removing and initializing the pipeline with the Shared Attention..
+
+Authors:
+- Alessio Borgi (alessioborgi3@gmail.com)
+- Francesco Danese (danese.1926188@studenti.uniroma1.it)
+
+Created on: July 6, 2024
+"""
+from __future__ import annotations
+import torch                                                                                                                                        
 from diffusers import StableDiffusionXLPipeline
 from . import StyleAlignedArgs
 from . import Shared_Attention

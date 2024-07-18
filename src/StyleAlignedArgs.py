@@ -1,7 +1,7 @@
 """
-Shared_Attention.py
+StyleAlignedArgs.py
 
-This file contains the implementation of the Shared Attention Mechanism.
+This file contains the implementation of the StyleAlignedArgs Class having all the necessary parameters.
 
 Authors:
 - Alessio Borgi (alessioborgi3@gmail.com)
