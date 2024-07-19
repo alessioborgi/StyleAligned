@@ -80,7 +80,7 @@ To get started with StyleAligned, follow these steps:
         <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 235px; margin-right: 0;">
     </div>
 </div>
-<hr style="height: 2px; margin: 20px;>
+<hr>
 	
 2.	**StyleAligned_with_Reference.ipynb**
 	-	**Purpose**:  Illustrates style alignment using reference images to guide the process.
@@ -97,11 +97,19 @@ To get started with StyleAligned, follow these steps:
 </div>
 <hr>
 
-
 3.	**StyleAligned_ControlNet.ipynb**
 	-	**Purpose**: Demonstrates how to control style alignment using specific parameters and ControlNet inputs (depth images or edge images (Canny Edges)).
 	-	**Run**: Use this notebook to explore enhanced control over the style alignment process with ControlNet.
 	-	**Command**: `jupyter notebook StyleAligned_ControlNet.ipynb`
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="display: flex;">
+        <img src="imgs/ReadmeImports/original.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/InversionTestMedieval.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/saxophone.png" alt="Image 3" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 235px; margin-right: 0;">
+    </div>
+</div>
 
 4.	**StyleAligned_Explanation.ipynb**
 	-	**Purpose**:  Provides an in-depth explanation of the underlying methods and techniques used in StyleAligned, with detailed comments for each step involved.
