@@ -72,8 +72,13 @@ To get started with StyleAligned, follow these steps:
 	-	**Run**: Use this notebook to generate stylistically coherent images from textual descriptions without the need for reference images.
 	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
 
-<div style="text-align: center">
-	<img src="imgs/ReadmeImports/toytrain.png" alt = "Image Not Loading" width = "1200" />
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div style="display: flex;">
+        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 150px; height: 150px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 150px; height: 150px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 150px; height: 150px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 150px; height: 150px; margin-right: 0;">
+    </div>
 </div>
 
 
@@ -101,17 +106,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### **Acknowledgments**
 
 We would like to thank Google Research for introducing the original concept of StyleAligned.
-
-.image-row {
-    display: flex;
-}
-
-.image-row img {
-    width: 150px; /* fixed width */
-    height: 150px; /* fixed height */
-    margin-right: 10px; /* space between images */
-}
-
-.image-row img:last-child {
-    margin-right: 0; /* remove space after the last image */
-}
