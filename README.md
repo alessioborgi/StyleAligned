@@ -73,7 +73,7 @@ To get started with StyleAligned, follow these steps:
 	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
 
 <div style="text-align: center">
-	<img src="img/train.png" alt = "Image Not Loading" width = "1200" />
+	<img src="imgs/ReadmeImports/toytrain.png" alt = "Image Not Loading" width = "1200" />
 </div>
 
 
