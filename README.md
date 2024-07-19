@@ -40,10 +40,10 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 240px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 245px; margin-right: 0;">
     </div>
 </div>
 <hr>
@@ -55,10 +55,10 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/original.png" alt="Image 1" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/InversionTestMedieval.png" alt="Image 2" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/saxophone.png" alt="Image 3" style="width: 240px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 240px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/original.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/InversionTestMedieval.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/saxophone.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 245px; margin-right: 0;">
     </div>
 </div>
 <hr>
@@ -70,10 +70,10 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/dmref.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/dm.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/house1.png" alt="Image 3" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/house2.png" alt="Image 4" style="width: 235px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/dmref.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/dm.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/house1.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/house2.png" alt="Image 4" style="width: 245px; margin-right: 0;">
     </div>
 </div>
 <hr>
