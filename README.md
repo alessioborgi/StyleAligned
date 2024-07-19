@@ -81,7 +81,7 @@ To get started with StyleAligned, follow these steps:
     </div>
 </div>
 <hr style="height: 2px; margin: 20px;>
-<span style="color: red;">red text</span>
+	
 2.	**StyleAligned_with_Reference.ipynb**
 	-	**Purpose**:  Illustrates style alignment using reference images to guide the process.
 	-	**Run**: Use this notebook to apply a reference style across multiple generated images, ensuring consistent style transfer.
