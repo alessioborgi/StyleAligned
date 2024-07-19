@@ -2,7 +2,7 @@
 
 # StyleAligned: Zero-Shot Style Alignment among a Series of Generated Images via Attention Sharing
 
-### Copyright © 2024 Alessio Borgi, Francesco Danese***
+### Copyright © 2024 Alessio Borgi, Francesco Danese
 
 ### **Abstract**
 In this notebook we aim to reproduce and enhance **[StyleAligned](https://arxiv.org/abs/2312.02133)**, a novel technique designed to achieve **Zero-Shot Style Alignment in Text-to-Image (T2I) Generative Models**,introduced by **Google Research**. While current T2I models excel in creating visually compelling images from textual descriptions, they often struggle to maintain a consistent style across multiple images generated. Traditional methods to address this require extensive fine-tuning and manual intervention.**StyleAligned**, addresses this issue by incorporating minimal **Shared Attention** during the diffusion process, allowing for consistent style transfer without extensive fine-tuning (**Zero-Shoot Inference**). This technique involves a straightforward inversion operation that enforces stylistic coherence while maintaining high fidelity to the text prompts. 
@@ -29,12 +29,9 @@ An extensive **Metrics Analysis** has also been provided w.r.t. the following, d
 ### **Installation**
 
 To get started with StyleAligned, follow these steps:
-1.	Clone the Repository:
-    `git clone https://github.com/alessioborgi/StyleAlignedDiffModels.git`
-2.  Navigate to the project directory:    
-    `cd StyleAlignedDiffModels`
-3.  Install the required dependencies:
-    `pip install -r requirements.txt`
+1.	Clone the Repository: `git clone https://github.com/alessioborgi/StyleAlignedDiffModels.git`
+2.  Navigate to the project directory:    `cd StyleAlignedDiffModels`
+3.  Install the required dependencies:    `pip install -r requirements.txt`
 
 ### **License**
 
