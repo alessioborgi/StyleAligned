@@ -38,12 +38,12 @@ To get started with StyleAligned, follow these steps:
 	-	**Run**: Use this notebook to generate stylistically coherent images from textual descriptions without the need for reference images.
 	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100%; margin: 0;">
-    <div style="display: flex; width: 100%;">
-        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="flex: 1; margin-right: 10px; object-fit: cover;">
-        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="flex: 1; margin-right: 10px; object-fit: cover;">
-        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="flex: 1; margin-right: 10px; object-fit: cover;">
-        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="flex: 1; margin-right: 0; object-fit: cover;">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="display: flex;">
+        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 245px; margin-right: 0;">
     </div>
 </div>
 <hr>
