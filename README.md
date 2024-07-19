@@ -70,12 +70,25 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/dmref.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/dm.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/house1.png" alt="Image 3" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/house2.png" alt="Image 4" style="width: 235px; margin-right: 0;">
+        <div style="text-align: center; margin-right: 10px;">
+            <p>Reference Image</p>
+            <img src="imgs/ReadmeImports/dmref.png" alt="Image 1" style="width: 235px;">
+        </div>
+        <div style="text-align: center; margin-right: 10px;">
+            <p>Man working on a laptop</p>
+            <img src="imgs/ReadmeImports/dm.png" alt="Image 2" style="width: 235px;">
+        </div>
+        <div style="text-align: center; margin-right: 10px;">
+            <p>Woman playing saxophone</p>
+            <img src="imgs/ReadmeImports/house1.png" alt="Image 3" style="width: 235px;">
+        </div>
+        <div style="text-align: center;">
+            <p>A man eating pizza</p>
+            <img src="imgs/ReadmeImports/house2.png" alt="Image 4" style="width: 235px;">
+        </div>
     </div>
 </div>
+
 <hr>
 
 4.	**StyleAligned_Explanation.ipynb**
