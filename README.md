@@ -23,7 +23,8 @@ Our approach shows that high-quality, stylistically aligned image sets can be ac
 
 A **Metrics Analysis** has also been provided w.r.t. the following, demonstrating the valuable insights of this technique:
 - **Style Consistency: DINO Embedding Similarity**
-- **Prompt-To-Image coherence: CLIP Embedding Similarity** 
+- **Prompt-To-Image coherence: CLIP Embedding Similarity**
+To verify that each generated image contains its specified object, we measure the CLIP cosine similarity between the image and the text description of the object. In addition, we evaluate the style consistency of each generated set, by measuring the pairwise average cosine similarity between DINO VIT-B/8 [9] embeddings of the generated images in each set. Following [47, 62], we used DINOembeddingsinstead of CLIPimageembeddings for measuring image similarity, since CLIP was trained with class labels and therefore it might give a high score for different images in the set that have similar content but with a different style. On the other hand, DINO better distinguishes between different styles due to its self-supervised training.
 
 ### **Installation**
 
