@@ -74,10 +74,10 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 250px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 250px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 250px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 250px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 230px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 230px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 230px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 230px; margin-right: 0;">
     </div>
 </div>
 
