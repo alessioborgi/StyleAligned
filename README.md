@@ -77,6 +77,7 @@ To get started with StyleAligned, follow these steps:
     </div>
 </div>
 <hr>
+
 4.	**StyleAligned_Explanation.ipynb**
 	-	**Purpose**:  Provides an in-depth explanation of the underlying methods and techniques used in StyleAligned, with detailed comments for each step involved.
 	-	**Run**: Start here to understand the theoretical background, the inversion operation, and how attention sharing is achieved with minimal intervention. This comprises all the methods (both StyleAligned with Prompts, with Reference and with ControlNet).
