@@ -72,7 +72,7 @@ To get started with StyleAligned, follow these steps:
 	-	**Run**: Use this notebook to generate stylistically coherent images from textual descriptions without the need for reference images.
 	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: 10px; margin-bottom: 100px">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
         <img src="imgs/ReadmeImports/toytrain.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
         <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
@@ -81,12 +81,13 @@ To get started with StyleAligned, follow these steps:
     </div>
 </div>
 
+
 2.	**StyleAligned_with_Reference.ipynb**
 	-	**Purpose**:  Illustrates style alignment using reference images to guide the process.
 	-	**Run**: Use this notebook to apply a reference style across multiple generated images, ensuring consistent style transfer.
 	-	**Command**: `jupyter notebook StyleAligned_with_Reference.ipynb`
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: 10px; margin-bottom: 10px">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
         <img src="imgs/ReadmeImports/original.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
         <img src="imgs/ReadmeImports/InversionTestMedieval.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
@@ -94,6 +95,7 @@ To get started with StyleAligned, follow these steps:
         <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 235px; margin-right: 0;">
     </div>
 </div>
+
 
 3.	**StyleAligned_ControlNet.ipynb**
 	-	**Purpose**: Demonstrates how to control style alignment using specific parameters and ControlNet inputs (depth images or edge images (Canny Edges)).
