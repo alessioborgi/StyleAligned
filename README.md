@@ -27,6 +27,11 @@ A **Metrics Analysis** has also been provided w.r.t. the following, demonstratin
   
 To verify that each generated image contains its specified object, we measure the CLIP cosine similarity between the image and the text description of the object. In addition, we evaluate the style consistency of each generated set, by measuring the pairwise average cosine similarity between DINO VIT-B/8 embeddings of the generated images in each set. We used DINO embeddings instead of CLIP image embeddings for measuring image similarity, since CLIP was trained with class labels and therefore it might give a high score for different images in the set that have similar content but with a different style. On the other hand, DINO better distinguishes between different styles due to its self-supervised training.
 
+|         MODEL 	|  CLIP  |  DINO  |
+|-----------------------|--------|--------|
+| SDXL (Non-Aligned) 	| 0.3454 | 0.3453 |
+| Style-Aligned SDXL    | 0.3422 | 0.5018 |
+
 ### **Installation**
 
 To get started with StyleAligned, follow these steps:
