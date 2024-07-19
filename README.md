@@ -25,40 +25,6 @@ A **Metrics Analysis** has also been provided w.r.t. the following, demonstratin
 - **Style Consistency: DINO Embedding Similarity**
 - **Prompt-To-Image coherence: CLIP Embedding Similarity** 
 
-### Style Alignment Explanation's Index
-
-- **0: SETTINGS & IMPORTS**
-    - **0.1: CLONE REPOSITORY AND GIT SETUP**
-    - **0.2: INSTALL AND IMPORT REQUIRED LIBRARIES**
-- **1: UTILS IMPLEMENTATION**
-    - **1.1: ADAIN MODULE**
-    - **1.2: SHARED ATTENTION MECHANISM**
-- **2: DDIM \& PIPELINE DEFINITION**
-    - **2.1: DDIM SCHEDULER**
-        - **2.1.1: DIFFUSION PROCESS**
-        - **2.1.2: REVERSE PROCESS**
-        - **2.1.3: BETA SCHEDULE**
-        - **2.1.4: INFERENCE WITH DDIM**
-    - **2.2: SDXL PIPELINE DEFINITION**
-- **3: STYLE-ALIGNED WITH ONLY PROMPTS (WITHOUT REFERENCE IMAGE)**
-- **4: STYLE-ALIGNED WITH REFERENCE IMAGE**
-    - **4.1: LOADING REFERENCE IMAGE & SETTING PARAMETERS**
-    - **4.2: FUNCTION FOR PROMPT TOKENIZATION & EMBEDDING**
-    - **4.3: TEXT EMBEDDING ENSEMBLE METHOD**
-    - **4.4: TEXT EMBEDDING: NEGATIVE CONDITIONING TECHNIQUE**
-    - **4.5: ENCODE THE REFERENCE IMAGE**
-    - **4.6: GENERATE NOISE PREDICTIONS**
-    - **4.7: SINGLE DENOISING STEP in DIFFUSION PROCESS**
-    - **4.8: DDIM (Denoising Diffusion Implicit Models) Denoising Process**
-    - **4.9:  UPDATE LATENT TENSORS CALLBACK**
-    - **4.10: STYLE-ALIGNED WITH REFERENCE IMAGE MAIN**
-- **5: STYLE-ALIGNED WITH CONTROLNET**
-    - **5.1: CONCATENATION WITH ZERO TENSORS: UTIL FUNCTION**
-    - **5.2: CONTROLNET MODEL**
-    - **5.3: CONTROL-NET WITH SIMPLE IMAGE & STYLE-ALIGNMENT**
-    - **5.4: CONTROL-NET WITH DEPTH MAP & STYLE-ALIGNMENT**
-    - **5.5: CONTROL-NET WITH EDGE MAP (CANNY DETECTOR) & STYLE-ALIGNMENT**
-    
 ### **Installation**
 
 To get started with StyleAligned, follow these steps:
@@ -104,19 +70,51 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/original.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/InversionTestMedieval.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/saxophone.png" alt="Image 3" style="width: 235px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 235px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/dmref.png" alt="Image 1" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/dm.png" alt="Image 2" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/house1.png" alt="Image 3" style="width: 235px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/house2.png" alt="Image 4" style="width: 235px; margin-right: 0;">
     </div>
 </div>
-
+<hr>
 4.	**StyleAligned_Explanation.ipynb**
 	-	**Purpose**:  Provides an in-depth explanation of the underlying methods and techniques used in StyleAligned, with detailed comments for each step involved.
 	-	**Run**: Start here to understand the theoretical background, the inversion operation, and how attention sharing is achieved with minimal intervention. This comprises all the methods (both StyleAligned with Prompts, with Reference and with ControlNet).
 	-	**Command**: `jupyter notebook StyleAligned_Explanation.ipynb`
 
+### Style Alignment Explanation's Index
 
+- **0: SETTINGS & IMPORTS**
+    - **0.1: CLONE REPOSITORY AND GIT SETUP**
+    - **0.2: INSTALL AND IMPORT REQUIRED LIBRARIES**
+- **1: UTILS IMPLEMENTATION**
+    - **1.1: ADAIN MODULE**
+    - **1.2: SHARED ATTENTION MECHANISM**
+- **2: DDIM \& PIPELINE DEFINITION**
+    - **2.1: DDIM SCHEDULER**
+        - **2.1.1: DIFFUSION PROCESS**
+        - **2.1.2: REVERSE PROCESS**
+        - **2.1.3: BETA SCHEDULE**
+        - **2.1.4: INFERENCE WITH DDIM**
+    - **2.2: SDXL PIPELINE DEFINITION**
+- **3: STYLE-ALIGNED WITH ONLY PROMPTS (WITHOUT REFERENCE IMAGE)**
+- **4: STYLE-ALIGNED WITH REFERENCE IMAGE**
+    - **4.1: LOADING REFERENCE IMAGE & SETTING PARAMETERS**
+    - **4.2: FUNCTION FOR PROMPT TOKENIZATION & EMBEDDING**
+    - **4.3: TEXT EMBEDDING ENSEMBLE METHOD**
+    - **4.4: TEXT EMBEDDING: NEGATIVE CONDITIONING TECHNIQUE**
+    - **4.5: ENCODE THE REFERENCE IMAGE**
+    - **4.6: GENERATE NOISE PREDICTIONS**
+    - **4.7: SINGLE DENOISING STEP in DIFFUSION PROCESS**
+    - **4.8: DDIM (Denoising Diffusion Implicit Models) Denoising Process**
+    - **4.9:  UPDATE LATENT TENSORS CALLBACK**
+    - **4.10: STYLE-ALIGNED WITH REFERENCE IMAGE MAIN**
+- **5: STYLE-ALIGNED WITH CONTROLNET**
+    - **5.1: CONCATENATION WITH ZERO TENSORS: UTIL FUNCTION**
+    - **5.2: CONTROLNET MODEL**
+    - **5.3: CONTROL-NET WITH SIMPLE IMAGE & STYLE-ALIGNMENT**
+    - **5.4: CONTROL-NET WITH DEPTH MAP & STYLE-ALIGNMENT**
+    - **5.5: CONTROL-NET WITH EDGE MAP (CANNY DETECTOR) & STYLE-ALIGNMENT**
 
 ### **License**
 
