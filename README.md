@@ -5,9 +5,11 @@
 ### Copyright © 2024 Alessio Borgi, Francesco Danese
 
 ### **Abstract**
+
 In this notebook we aim to reproduce and enhance **[StyleAligned](https://arxiv.org/abs/2312.02133)**, a novel technique designed to achieve **Zero-Shot Style Alignment in Text-to-Image (T2I) Generative Models**,introduced by **Google Research**. While current T2I models excel in creating visually compelling images from textual descriptions, they often struggle to maintain a consistent style across multiple images generated. Traditional methods to address this require extensive fine-tuning and manual intervention. **StyleAligned**, addresses this issue by incorporating minimal **Shared Attention** during the diffusion process, allowing for consistent style transfer without extensive fine-tuning (**Zero-Shot Inference**). This technique involves a straightforward inversion operation that enforces stylistic coherence while maintaining high fidelity to the text prompts. At the end of this readme, some examples are shown, please open the readme fully by clicking on the file for a better rendering.
 
 ### **Features**
+
 -   **Zero-Shot Style Alignment**: Achieve consistent style alignment without the need for optimization or fine-tuning.
 -	**Minimal Attention Sharing**: Introduces attention sharing during the diffusion process for seamless style transfer.
 -	**High-Quality Synthesis**: Maintains high fidelity to text prompts while ensuring stylistic coherence.
@@ -22,6 +24,7 @@ We propose three primary applications of StyleAligned:
 Our approach shows that high-quality, stylistically aligned image sets can be achieved with minimal intervention, enhancing the utility of T2I models for applications such as visual storytelling, artistic creation, and design. The method operates without the need for extensive optimization or fine-tuning, distinguishing it as a zero-shot solution. Evaluation across diverse styles and text prompts demonstrates the high-quality synthesis and fidelity of our method, underscoring its efficacy in achieving consistent style across various inputs. 
 
 ### **Evaluation Metrics**
+
 A **Metrics Analysis** has also been provided w.r.t. the following, demonstrating the valuable insights of this technique:
 - **Style Consistency: DINO Embedding Similarity**
 - **Text-Image Coherence: CLIP Embedding Similarity**
