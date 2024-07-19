@@ -80,7 +80,7 @@ To get started with StyleAligned, follow these steps:
         <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 235px; margin-right: 0;">
     </div>
 </div>
-
+<hr style="height: 2px; margin: 20px; background-color:white">
 
 2.	**StyleAligned_with_Reference.ipynb**
 	-	**Purpose**:  Illustrates style alignment using reference images to guide the process.
@@ -95,6 +95,7 @@ To get started with StyleAligned, follow these steps:
         <img src="imgs/ReadmeImports/pizza.png" alt="Image 4" style="width: 235px; margin-right: 0;">
     </div>
 </div>
+<hr>
 
 
 3.	**StyleAligned_ControlNet.ipynb**
