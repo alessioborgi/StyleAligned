@@ -22,9 +22,8 @@ We propose three primary applications of StyleAligned:
 Our approach shows that high-quality, stylistically aligned image sets can be achieved with minimal intervention, enhancing the utility of T2I models for applications such as visual storytelling, artistic creation, and design. The method operates without the need for extensive optimization or fine-tuning, distinguishing it as a zero-shot solution. Evaluation across diverse styles and text prompts demonstrates the high-quality synthesis and fidelity of our method, underscoring its efficacy in achieving consistent style across various inputs. 
 
 An extensive **Metrics Analysis** has also been provided w.r.t. the following, demonstrating the valuable insights of this technique.
-- **Style Consistency (DINO Embedding Similarity)**
-- **CLIP Score** 
-- **Inception Score (IS)**
+- **Style Consistency: DINO Embedding Similarity**
+- **Prompt-To-Image coherence: CLIP Embedding Similarity** 
 
 ### Style Alignment Explanation's Index
 
