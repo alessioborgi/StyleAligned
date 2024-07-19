@@ -59,6 +59,14 @@ To get started with StyleAligned, follow these steps:
 	-	**Run**: Use this notebook to generate stylistically coherent images from textual descriptions without the need for reference images.
 	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
 
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="display: flex;">
+        <img src="imgs/ReadmeImports/bear playing with a ball.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toycar.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyairplane.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/toyboat.png" alt="Image 4" style="width: 245px; margin-right: 0;">
+    </div>
+</div>
 <hr>
 	
 2.	**StyleAligned_with_Reference.ipynb**
