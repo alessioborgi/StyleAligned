@@ -33,6 +33,29 @@ To get started with StyleAligned, follow these steps:
 2.  Navigate to the project directory:    `cd StyleAlignedDiffModels`
 3.  Install the required dependencies:    `pip install -r requirements.txt`
 
+### Notebook Instructions
+1.	**StyleAligned_with_Prompts_only.ipynb**
+	-	**Purpose**: Demonstrates the simplicity and effectiveness of achieving style alignment using only text prompts.
+	-	**Run**: Use this notebook to generate stylistically coherent images from textual descriptions without the need for reference images.
+	-	**Command**: `jupyter notebook StyleAligned_with_Prompts_only.ipynb`
+
+2.	**StyleAligned_with_Reference.ipynb**
+	-	**Purpose**:  Illustrates style alignment using reference images to guide the process.
+	-	**Run**: Use this notebook to apply a reference style across multiple generated images, ensuring consistent style transfer.
+	-	**Command**: `jupyter notebook StyleAligned_with_Reference.ipynb`
+
+3.	**StyleAligned_ControlNet.ipynb**
+	-	**Purpose**: Demonstrates how to control style alignment using specific parameters and ControlNet inputs (depth images or edge images (Canny Edges)).
+	-	**Run**: Use this notebook to explore enhanced control over the style alignment process with ControlNet.
+	-	**Command**: `jupyter notebook StyleAligned_ControlNet.ipynb`
+
+4.	**StyleAligned_Explanation.ipynb**
+	-	**Purpose**:  Provides an in-depth explanation of the underlying methods and techniques used in StyleAligned, with detailed comments for each step involved.
+	-	**Run**: Start here to understand the theoretical background, the inversion operation, and how attention sharing is achieved with minimal intervention. This comprises all the methods (both StyleAligned with Prompts, with Reference and with ControlNet).
+	-	**Command**: `jupyter notebook StyleAligned_Explanation.ipynb`
+
+
+
 ### **License**
 
 This project is licensed under the MIT License - see the LICENSE file for details.
