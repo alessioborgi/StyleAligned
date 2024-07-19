@@ -101,3 +101,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### **Acknowledgments**
 
 We would like to thank Google Research for introducing the original concept of StyleAligned.
+
+.image-row {
+    display: flex;
+}
+
+.image-row img {
+    width: 150px; /* fixed width */
+    height: 150px; /* fixed height */
+    margin-right: 10px; /* space between images */
+}
+
+.image-row img:last-child {
+    margin-right: 0; /* remove space after the last image */
+}
