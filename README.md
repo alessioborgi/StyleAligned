@@ -26,7 +26,7 @@ An extensive **Metrics Analysis** has also been provided w.r.t. the following, d
 - **CLIP Score** 
 - **Inception Score (IS)**
 
-### INDEX
+### Style Alignment Explanation's Index
 
 - **0: SETTINGS & IMPORTS**
     - **0.1: CLONE REPOSITORY AND GIT SETUP**
