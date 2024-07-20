@@ -61,10 +61,10 @@ To get started with StyleAligned, follow these steps:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div style="display: flex;">
-        <img src="imgs/ReadmeImports/bear playing with a ball.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/black swan.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/shark among bubbles.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
-        <img src="imgs/ReadmeImports/t-rex roaring.png" alt="Image 4" style="width: 245px; margin-right: 0;">
+        <img src="imgs/ReadmeImports/bear_playing_with_a_ball.png" alt="Image 1" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/black_swan.png" alt="Image 2" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/shark_among_bubbles.png" alt="Image 3" style="width: 245px; margin-right: 10px;">
+        <img src="imgs/ReadmeImports/t_rex_roaring.png" alt="Image 4" style="width: 245px; margin-right: 0;">
     </div>
 </div>
 <hr>
