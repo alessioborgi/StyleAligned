@@ -19,7 +19,7 @@ from tqdm import tqdm
 from typing import Callable
 from diffusers import StableDiffusionXLPipeline
 
-from . import embeddings_ensemble_with_neg_conditioning
+from Tokenization_and_Embedding import embeddings_ensemble_with_neg_conditioning
 from . import image_encoding
 T = torch.tensor # Create Alias for torch.tensor to increase readability.
 TN = T
