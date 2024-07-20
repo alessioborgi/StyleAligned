@@ -195,7 +195,7 @@ def register_shared_norm(pipeline: StableDiffusionXLPipeline,
 
         def forward_(hidden_states: T) -> T: # perform Group/Layer Normalization with reference img.
             n = hidden_states.shape[-2] # hs shape: (batch, head, #tokens, channels). Channels and dim_head are synonym in this notebook.
-            hidden_states = concat_first(hidden_states, dim=-2) # concat with reference img hidden_states shape (b, h, 2*t, c)
+            hidden_states = AdaIN.concat_first(hidden_states, dim=-2) # concat with reference img hidden_states shape (b, h, 2*t, c)
             hidden_states = orig_forward(hidden_states) # original normalization this time with also reference hidden states
             return hidden_states[..., :n, :] # retain just original hidden states ("tokens") i.e. the first half of them
 
