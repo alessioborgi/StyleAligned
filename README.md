@@ -39,7 +39,7 @@ A **Metrics Analysis** has also been provided w.r.t. the following, demonstratin
 - **Style Consistency: DINO Embedding Similarity**
 - **Text-Image Coherence: CLIP Embedding Similarity**
   
-To verify that each generated image contains its specified object, we measure the CLIP cosine similarity between the image and the text description of the object. In addition, we evaluate the style consistency of each generated set, by measuring the pairwise average cosine similarity between DINO VIT-B/8 embeddings of the generated images in each set. We used DINO embeddings instead of CLIP image embeddings for measuring image similarity, since CLIP was trained with class labels and therefore it might give a high score for different images in the set that have similar content but with a different style. On the other hand, DINO better distinguishes between different styles due to its self-supervised training.
+To verify that each generated image contains its specified object, we measure the **CLIP Cosine Similarity** between the image and the text description of the object. In addition, we evaluate the style consistency of each generated set, by measuring the **Pairwise Average Cosine Similarity** between **DINO VIT-B/8 Embeddings** of the generated images in each set. We used DINO embeddings instead of CLIP image embeddings for measuring image similarity, since CLIP was trained with class labels and therefore it might give a high score for different images in the set that have similar content but with a different style. On the other hand, DINO better distinguishes between different styles due to its self-supervised training.
 
 |         MODEL 	|  CLIP  |  DINO  |
 |-----------------------|--------|--------|
