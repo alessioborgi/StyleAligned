@@ -18,7 +18,7 @@ In this notebook we aim to reproduce and enhance **[StyleAligned](https://arxiv.
 </div>
 <hr>
 
-### **Features**
+### **StyleAligned's Keypoints**
 
 -   **Zero-Shot Style Alignment**: Achieve consistent style alignment without the need for optimization or fine-tuning.
 -	**Minimal Attention Sharing**: Introduces attention sharing during the diffusion process for seamless style transfer.
