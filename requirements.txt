@@ -7,4 +7,5 @@ mediapy
 ipywidgets
 einops
 gradio
+librosa
 
