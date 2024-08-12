@@ -9,4 +9,4 @@ einops
 gradio
 librosa
 torchaudio
-laion_clap
+laion-clap
