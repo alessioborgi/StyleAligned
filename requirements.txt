@@ -8,4 +8,6 @@ ipywidgets
 einops
 gradio
 librosa
+audeer
+audonnx
 
