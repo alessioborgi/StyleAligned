@@ -8,6 +8,6 @@ ipywidgets
 einops
 gradio
 librosa
-audeer
-audonnx
+torchaudio
+speechbrain
 
