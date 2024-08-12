@@ -9,4 +9,3 @@ einops
 gradio
 librosa
 torchaudio
-musly
