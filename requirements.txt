@@ -9,5 +9,4 @@ einops
 gradio
 librosa
 torchaudio
-speechbrain
-
+musly
