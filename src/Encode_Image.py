@@ -143,3 +143,46 @@ def images_encoding_slerp(model, images: list[np.ndarray], blending_weights: lis
 
     # Return the blended latent representation.
     return blended_latent_img
+
+
+def images_encoding_multistage(model, images: list[np.ndarray], blending_weights: list[float]):
+    """
+    Encode a list of images using the VAE model and return their latent representations.
+
+    Args:
+    - model: The StableDiffusionXLPipeline model.
+    - images: A list of numpy arrays, each representing an image.
+    - blending_weights: A list of floats representing the blending weights for each image.
+                        The blending_weights should sum to 1.
+
+    Returns:
+    - latent_imgs: A list of latent representations, one for each image.
+    """
+
+    # Ensure the blending_weights sum to 1.
+    assert len(images) == len(blending_weights), "The number of images and blending_weights must match."
+    assert np.isclose(sum(blending_weights), 1.0), "blending_weights must sum to 1."
+
+    # Set VAE to Float32 for encoding.
+    model.vae.to(dtype=torch.float32)
+
+    latent_imgs = []
+
+    # Encode each image into its latent representation
+    for img in images:
+        # Convert image to PyTorch tensor and normalize pixel values to [0, 1].
+        scaled_image = torch.from_numpy(img).float() / 255.
+
+        # Normalize and prepare image.
+        permuted_image = (scaled_image * 2 - 1).permute(2, 0, 1).unsqueeze(0)
+
+        # Encode image using VAE.
+        latent_img = model.vae.encode(permuted_image.to(model.vae.device))['latent_dist'].mean * model.vae.config.scaling_factor
+
+        latent_imgs.append(latent_img)
+
+    # Reset VAE to Float16 if necessary.
+    model.vae.to(dtype=torch.float16)
+
+    # Return the list of latent representations.
+    return latent_imgs
