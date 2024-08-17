@@ -37,6 +37,7 @@ def image_encoding(model: StableDiffusionXLPipeline, image: np.ndarray) -> T:
     return latent_img
 
 
+### LINEAR WEIGHTED AVERAGE #################################
 def images_encoding(model, images: list[np.ndarray], blending_weights: list[float]):
     """
     Encode a list of images using the VAE model and blend their latent representations
@@ -86,7 +87,7 @@ def images_encoding(model, images: list[np.ndarray], blending_weights: list[floa
     return blended_latent_img
 
 
-
+### WEIGHTED SLERP (SPHERICAL LINEAR INTERPOLATION) ###
 def weighted_slerp(weight, v0, v1):
     """Spherical linear interpolation with a weight factor."""
     v0_norm = v0 / torch.norm(v0, dim=-1, keepdim=True)
@@ -145,9 +146,34 @@ def images_encoding_slerp(model, images: list[np.ndarray], blending_weights: lis
     return blended_latent_img
 
 
-def images_encoding_multistage(model, images: list[np.ndarray], blending_weights: list[float]):
+### BARYCENTRIC INTERPOLATION ###
+def barycentric_interpolation(latents: list[torch.Tensor], weights: list[float]) -> torch.Tensor:
     """
-    Encode a list of images using the VAE model and return their latent representations.
+    Perform barycentric interpolation on a set of latent vectors.
+    
+    Args:
+    - latents: A list of latent vectors (Tensors) to be blended.
+    - weights: A list of weights for the corresponding latent vectors. These should sum to 1.
+    
+    Returns:
+    - blended_latent: The blended latent vector.
+    """
+    assert len(latents) == len(weights), "Number of latents and weights must match."
+    assert np.isclose(sum(weights), 1.0), "Weights must sum to 1."
+    
+    # Start with a zero tensor for the blended latent vector
+    blended_latent = torch.zeros_like(latents[0])
+    
+    # Perform barycentric interpolation by summing the weighted latents
+    for latent, weight in zip(latents, weights):
+        blended_latent += latent * weight
+    
+    return blended_latent
+
+def images_encoding_barycentric(model, images: list[np.ndarray], blending_weights: list[float]):
+    """
+    Encode a list of images using the VAE model and blend their latent representations
+    using Barycentric Interpolation according to the given blending_weights.
 
     Args:
     - model: The StableDiffusionXLPipeline model.
@@ -156,7 +182,7 @@ def images_encoding_multistage(model, images: list[np.ndarray], blending_weights
                         The blending_weights should sum to 1.
 
     Returns:
-    - latent_imgs: A list of latent representations, one for each image.
+    - blended_latent_img: The blended latent representation.
     """
 
     # Ensure the blending_weights sum to 1.
@@ -166,9 +192,10 @@ def images_encoding_multistage(model, images: list[np.ndarray], blending_weights
     # Set VAE to Float32 for encoding.
     model.vae.to(dtype=torch.float32)
 
-    latent_imgs = []
+    # List to store latent representations
+    latent_representations = []
 
-    # Encode each image into its latent representation
+    # Encode each image and store its latent representation
     for img in images:
         # Convert image to PyTorch tensor and normalize pixel values to [0, 1].
         scaled_image = torch.from_numpy(img).float() / 255.
@@ -179,10 +206,14 @@ def images_encoding_multistage(model, images: list[np.ndarray], blending_weights
         # Encode image using VAE.
         latent_img = model.vae.encode(permuted_image.to(model.vae.device))['latent_dist'].mean * model.vae.config.scaling_factor
 
-        latent_imgs.append(latent_img)
+        # Add the latent representation to the list
+        latent_representations.append(latent_img)
+
+    # Perform barycentric interpolation on the latent representations
+    blended_latent_img = barycentric_interpolation(latent_representations, blending_weights)
 
     # Reset VAE to Float16 if necessary.
     model.vae.to(dtype=torch.float16)
 
-    # Return the list of latent representations.
-    return latent_imgs
+    # Return the blended latent representation.
+    return blended_latent_img
