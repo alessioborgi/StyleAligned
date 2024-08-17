@@ -48,7 +48,7 @@ def DDIM_Inversion_Process(model: StableDiffusionXLPipeline, x0: list[np.ndarray
     """
 
     # Encode Images: Encode the input images into latent representations using the model's VAE.
-    latent_imgs = images_encoding(model, x0, blending_weights)
+    latent_imgs = images_encoding_multistage(model, x0, blending_weights)
 
     # Set Timesteps: Set the timesteps for the diffusion process.
     model.scheduler.set_timesteps(num_inference_steps, device=latent_imgs[0].device)
