@@ -31,7 +31,7 @@ Diff_Inversion_Process_Callback = Callable[[StableDiffusionXLPipeline, int, T, d
 
 
 @torch.no_grad()
-def DDIM_Inversion_Process(model: StableDiffusionXLPipeline, x0: list[np.ndarray], blending_weights: list[float], prompts: list[str], num_inference_steps: int, guidance_scale: float) -> T:
+def DDIM_Inversion_Process(model: StableDiffusionXLPipeline, x0: list[np.ndarray], blending_weights: list[float], prompts: list[str], num_inference_steps: int, guidance_scale: float) -> torch.Tensor:
     """
     Perform the DDIM inversion process with multi-stage refinement using separate prompts for each stage.
 
@@ -48,7 +48,7 @@ def DDIM_Inversion_Process(model: StableDiffusionXLPipeline, x0: list[np.ndarray
     """
 
     # Encode Images: Encode the input images into latent representations using the model's VAE.
-    latent_imgs = images_encoding_multistage(model, x0, blending_weights)
+    latent_imgs = images_encoding(model, x0, blending_weights)
 
     # Set Timesteps: Set the timesteps for the diffusion process.
     model.scheduler.set_timesteps(num_inference_steps, device=latent_imgs[0].device)
@@ -57,15 +57,14 @@ def DDIM_Inversion_Process(model: StableDiffusionXLPipeline, x0: list[np.ndarray
     refined_latent_repr = latent_imgs[0].clone()
 
     for i in range(1, len(latent_imgs)):
-        # Blend the current refined latent representation with the next latent representation.
+        # Blend the current refined latent representation with the next latent representation using weights.
         weight = blending_weights[i]
-
-        # Alpha blending for the latent representations.
-        refined_latent_repr = refined_latent_repr * (1 - weight) + latent_imgs[i] * weight
-
+        
         # Optionally: Perform DDIM steps or intermediate steps using the prompt for this stage.
-        # You could refine the current latent representation using a partial diffusion process with the current prompt.
-        refined_latent_repr = DDIM_Process(model, refined_latent_repr, prompts[i], guidance_scale)
+        for step in tqdm(range(num_inference_steps // len(latent_imgs))):
+            # Perform a partial diffusion step here if desired for gradual refinement
+            latent_pred = model.unet(refined_latent_repr, model.scheduler.timesteps[step], encoder_hidden_states=prompts[i])
+            refined_latent_repr = refined_latent_repr * (1 - weight) + latent_pred * weight
 
     # Return Final Latent Representation: Return the final latent representation after refinement.
     return refined_latent_repr
