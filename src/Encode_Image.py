@@ -217,3 +217,90 @@ def images_encoding_barycentric(model, images: list[np.ndarray], blending_weight
 
     # Return the blended latent representation.
     return blended_latent_img
+
+
+### BEZIER INTERPOLATION ###
+def gaussian_rbf(distances, epsilon=1.0):
+    """Radial Basis Function using Gaussian kernel."""
+    return torch.exp(-(epsilon * distances) ** 2)
+
+def rbf_interpolation(latents: list[torch.Tensor], weights: list[float], epsilon: float = 1.0) -> torch.Tensor:
+    """
+    Perform Radial Basis Function (RBF) interpolation on a set of latent vectors.
+    
+    Args:
+    - latents: A list of latent vectors (Tensors) to be blended.
+    - weights: A list of weights for the corresponding latent vectors. These should sum to 1.
+    - epsilon: A parameter that controls the spread of the Gaussian RBF.
+    
+    Returns:
+    - blended_latent: The blended latent vector.
+    """
+    assert len(latents) == len(weights), "Number of latents and weights must match."
+    assert np.isclose(sum(weights), 1.0), "Weights must sum to 1."
+    
+    # Convert list of latents to a tensor stack for easier computation
+    latent_stack = torch.stack(latents)
+    
+    # Compute pairwise distances between latent vectors
+    distances = torch.cdist(latent_stack, latent_stack, p=2)  # Euclidean distance
+    
+    # Apply RBF to the distances to compute the influence of each latent vector
+    rbf_weights = gaussian_rbf(distances, epsilon=epsilon)
+    
+    # Normalize the RBF weights so they sum to 1
+    rbf_weights = rbf_weights / rbf_weights.sum(dim=1, keepdim=True)
+    
+    # Perform RBF interpolation: weighted sum of the latents based on RBF weights
+    blended_latent = torch.sum(rbf_weights.unsqueeze(-1) * latent_stack, dim=0)
+    
+    return blended_latent.mean(dim=0)  # Return the mean latent after RBF interpolation
+
+def images_encoding_rbf(model, images: list[np.ndarray], blending_weights: list[float], epsilon: float = 1.0):
+    """
+    Encode a list of images using the VAE model and blend their latent representations
+    using Radial Basis Function (RBF) Interpolation according to the given blending_weights.
+
+    Args:
+    - model: The StableDiffusionXLPipeline model.
+    - images: A list of numpy arrays, each representing an image.
+    - blending_weights: A list of floats representing the blending weights for each image.
+                        The blending_weights should sum to 1.
+    - epsilon: A parameter that controls the spread of the RBF (default is 1.0).
+
+    Returns:
+    - blended_latent_img: The blended latent representation.
+    """
+
+    # Ensure the blending_weights sum to 1.
+    assert len(images) == len(blending_weights), "The number of images and blending_weights must match."
+    assert np.isclose(sum(blending_weights), 1.0), "blending_weights must sum to 1."
+
+    # Set VAE to Float32 for encoding.
+    model.vae.to(dtype=torch.float32)
+
+    # List to store latent representations
+    latent_representations = []
+
+    # Encode each image and store its latent representation
+    for img in images:
+        # Convert image to PyTorch tensor and normalize pixel values to [0, 1].
+        scaled_image = torch.from_numpy(img).float() / 255.
+
+        # Normalize and prepare image.
+        permuted_image = (scaled_image * 2 - 1).permute(2, 0, 1).unsqueeze(0)
+
+        # Encode image using VAE.
+        latent_img = model.vae.encode(permuted_image.to(model.vae.device))['latent_dist'].mean * model.vae.config.scaling_factor
+
+        # Add the latent representation to the list
+        latent_representations.append(latent_img)
+
+    # Perform RBF interpolation on the latent representations
+    blended_latent_img = rbf_interpolation(latent_representations, blending_weights, epsilon=epsilon)
+
+    # Reset VAE to Float16 if necessary.
+    model.vae.to(dtype=torch.float16)
+
+    # Return the blended latent representation.
+    return blended_latent_img
