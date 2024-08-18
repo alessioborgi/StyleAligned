@@ -219,7 +219,10 @@ def images_encoding_barycentric(model, images: list[np.ndarray], blending_weight
     return blended_latent_img
 
 
-### BEZIER INTERPOLATION ###
+### RBF INTERPOLATION ###
+import torch
+import numpy as np
+
 def gaussian_rbf(distances, epsilon=1.0):
     """Radial Basis Function using Gaussian kernel."""
     return torch.exp(-(epsilon * distances) ** 2)
@@ -240,21 +243,22 @@ def rbf_interpolation(latents: list[torch.Tensor], weights: list[float], epsilon
     assert np.isclose(sum(weights), 1.0), "Weights must sum to 1."
     
     # Convert list of latents to a tensor stack for easier computation
-    latent_stack = torch.stack(latents)
+    latent_stack = torch.stack(latents)  # Shape: (N, C, H, W)
     
     # Compute pairwise distances between latent vectors
-    distances = torch.cdist(latent_stack, latent_stack, p=2)  # Euclidean distance
+    distances = torch.cdist(latent_stack.view(len(latents), -1), latent_stack.view(len(latents), -1), p=2)  # Flatten for distance computation
     
     # Apply RBF to the distances to compute the influence of each latent vector
-    rbf_weights = gaussian_rbf(distances, epsilon=epsilon)
+    rbf_weights = gaussian_rbf(distances, epsilon=epsilon)  # Shape: (N, N)
     
-    # Normalize the RBF weights so they sum to 1
+    # Normalize the RBF weights so they sum to 1 along the second dimension
     rbf_weights = rbf_weights / rbf_weights.sum(dim=1, keepdim=True)
     
     # Perform RBF interpolation: weighted sum of the latents based on RBF weights
-    blended_latent = torch.sum(rbf_weights.unsqueeze(-1) * latent_stack, dim=0)
-    
-    return blended_latent.mean(dim=0)  # Return the mean latent after RBF interpolation
+    # Here we need to properly broadcast rbf_weights to match the latent_stack dimensions
+    blended_latent = torch.einsum('ij,i...->j...', rbf_weights, latent_stack)  # Perform weighted sum
+
+    return blended_latent  # Return the blended latent vector
 
 def images_encoding_rbf(model, images: list[np.ndarray], blending_weights: list[float], epsilon: float = 1.0):
     """
