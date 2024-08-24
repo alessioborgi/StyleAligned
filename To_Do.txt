@@ -1,0 +1,2 @@
+Thinks To-Do:
+- Create functions and implementations with Focused Attention. 
