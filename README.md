@@ -4,6 +4,8 @@
 
 ### Copyright © 2024 Alessio Borgi, Francesco Danese
 
+### MULTI-MODAL & MULTI-REFERENCE (StyleAligned V2): https://github.com/alessioborgi/StyleAligned_MultiReference-MultiModal
+
 ### **Abstract**
 
 In this notebook we aim to reproduce and enhance **[StyleAligned](https://arxiv.org/abs/2312.02133)**, a novel technique designed to achieve **Zero-Shot Style Alignment in Text-to-Image (T2I) Generative Models**,introduced by **Google Research**. While current T2I models excel in creating visually compelling images from textual descriptions, they often struggle to maintain a consistent style across multiple images generated. Traditional methods to address this require extensive fine-tuning and manual intervention. **StyleAligned**, addresses this issue by incorporating minimal **Shared Attention** during the diffusion process, allowing for consistent style transfer without extensive fine-tuning (**Zero-Shot Inference**). This technique involves a straightforward inversion operation that enforces stylistic coherence while maintaining high fidelity to the text prompts. Throughout this readme, some examples are shown, please open the readme fully by clicking on the file for a better rendering.
