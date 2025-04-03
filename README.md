@@ -142,7 +142,7 @@ To get started with StyleAligned, follow these steps:
 
 ### **License**
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the CC0-1.0 License - see the [LICENSE](LICENSE) file for details.
 
 ### **Acknowledgments**
 
